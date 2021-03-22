@@ -4,11 +4,45 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta codigoSemana2="forYourEyesOnly">
+    <meta codigoSemana2="1488147542">
     <link rel="stylesheet" href="style/style.css">
-    <title>PWeb - by UmExemplo</title>
+    <title>PWeb - by Gabriel Barbosa</title>
 </head>
 <body>
-	<p>Isso é um exemplo.</p>
+    <ul>
+        <li><a href="index.html">Início</a></li>
+		<hr>
+		<li><a href="noticias.html" >Canais de notícias</a></li>
+		<hr>
+		<li><a href="#" class="active">Adicionar pessoa</a></li>
+		<li><a href="listarPessoas.html">Listar pessoas.</a></li>
+		<hr>
+		<li><a href="sobre.html">Sobre o site</a></li>
+		<li><a href="contato.html">Mande um e-Mail</a></li>
+    </ul>
+
+	<div style="margin-left:25%;padding:1px 16px;height:1000px;">
+
+    <h1>Formulário para cadastro de pessoas:</h1>
+
+    <form action="adicionadaComSucesso.html" method="GET" id="formulario">
+        
+        <label for="nomeCompleto">Nome completo*: </label>
+        <input type="text" name="nomeCompleto" id="nome" placeholder="Seu nome completo" required>
+        <br><br>
+        <label for="dataNascimento">Data de nascimento*: </label>
+        <input type="date" name="dataNascimento" id="nascimento" required>
+        <br><br>
+        <label for="email">e-Mail*: </label>
+        <input type="e-mail" name="email" id="email" placeholder="nome@dominio.com" required>
+        <br><br>
+        <div id="sexo">
+            <label for="sexo">Sexo*: </label> <br>
+                <input type="radio" name="sexo" value="masculino">Masculino <br>
+                <input type="radio" name="sexo" value="feminino">Feminino <br>
+                <input type="radio" name="sexo" value="naoInformar">Não Informar <br>
+        </div>
+    </form>
+       
 </body>
 </html>
