@@ -1,4 +1,4 @@
-package br.com.gabrielbarbosa.controllers;
+package br.com.gabrielbarbosa.cadpessoas.controllers;
 
 import java.util.List;
 
@@ -13,7 +13,7 @@ import br.com.gabrielbarbosa.cadpessoas.repositories.PessoaRepository;
 
 @Controller
 @RequestMapping("/")
-public class PessoasController {
+public class PessoaController {
 	@Autowired
 	PessoaRepository pessoaRepo;
 
