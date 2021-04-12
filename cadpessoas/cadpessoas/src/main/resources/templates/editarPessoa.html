@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta codigoSemana2="1859507319">
+    <link th:href="@{/css/style.css}" rel="stylesheet">
+    <title>PWeb - by Gabriel Barbosa</title>
+</head>
+<body>
+    <ul>
+        <li><a href="index.html">Início</a></li>
+		<hr>
+		<li><a href="noticias.html" >Canais de notícias</a></li>
+		<hr>
+		<li><a href="adicionarPessoa.html">Adicionar pessoa</a></li>
+		<li><a href="listarPessoas.html">Listar pessoas</a></li>
+		<hr>
+		<li><a href="sobre.html">Sobre o site</a></li>
+		<li><a href="contato.html">Mande um e-Mail</a></li>
+    </ul>
+
+	<div style="margin-left:25%;padding:1px 16px;height:1000px;">
+
+    <h1>Formulário para edição de pessoas:</h1>
+
+    <form action="listarPessoas.html" method="GET" id="formulario">
+        
+        <label for="nomeCompleto">Nome completo*: </label>
+        <input type="text" name="nomeCompleto" id="nome" placeholder="Seu nome completo" required>
+        <br><br>
+        <label for="dataNascimento">Data de nascimento*: </label>
+        <input type="date" name="dataNascimento" id="nascimento" required>
+        <br><br>
+        <label for="email">e-Mail*: </label>
+        <input type="e-mail" name="email" id="email" placeholder="nome@dominio.com" required>
+        <br><br>
+        <div id="sexo">
+            <label for="sexo">Sexo*: </label> <br>
+                <input type="radio" name="sexo" value="masculino" required>Masculino <br>
+                <input type="radio" name="sexo" value="feminino">Feminino <br>
+                <input type="radio" name="sexo" value="naoInformar">Não Informar <br><br>
+        </div>
+        <input type="reset" value="Limpar" class="button" class="button12px">
+        <input type="submit" value="Cadastrar!" class="button" class="button12px">
+    </form>
+    <br>* Campo Obrigatório
+    
+</body>
+</html>
