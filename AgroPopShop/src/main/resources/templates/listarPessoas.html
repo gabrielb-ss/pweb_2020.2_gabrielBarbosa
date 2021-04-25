@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta codigoSemana3="1859507319">
+    <link th:href="@{/css/style.css}" rel="stylesheet">
+    <title>PWeb - by Gabriel Barbosa</title>
+</head>
+<body>
+	<ul>
+		<li><a href="/">Início</a></li>
+		<hr>
+		<li><a href="/adicionarPessoa">Adicionar cliente</a></li>
+		<li><a href="/listarPessoas" class="active">Listar clientes</a></li>
+		<hr>
+		<li><a href="/public/sobre.html">Sobre o site</a></li>
+	</ul>
+
+	<div style="margin-left:25%;padding:1px 16px;height:1000px;">
+
+	<h1>Lista de clientes cadastrados</h1>
+	<table>
+		<tr>
+			<th>ID</th>
+			<th>Nome completo</th>
+			<th>Genero</th>
+			<th>Endereço</th>
+			<th>e-Mail</th>
+			<th>CEP</th>
+			<th>Profissão</th>
+			<th>Editar</th>
+			<th>Remover</th>
+		</tr>
+		<tr th:each="pessoa: ${pessoas}">
+			<td th:text="${pessoa.id}"></td>
+			<td th:text="${pessoa.nome}"></td>
+			<td th:text="${pessoa.genero}"></td>
+			<td th:text="${pessoa.endereco}"></td>
+			<td th:text="${pessoa.cep}"></td>
+			<td th:text="${pessoa.profissao}"></td>
+			<td>
+				<a th:href="'mailto:'+${pessoa.email}"th:text="${pessoa.email}"></a>
+			</td>
+			<td>
+				<a th:href="@{/editar/{id}(id=${pessoa.id})}">Editar</a>
+			</td>
+			<td>
+				<a th:href="@{/remover/{id}(id=${pessoa.id})}">Remover</a>
+			</td>
+	  	</tr>
+	</table>
+</body>
+</html>
