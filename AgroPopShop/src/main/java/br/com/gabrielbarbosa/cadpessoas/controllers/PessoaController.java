@@ -26,7 +26,7 @@ public class PessoaController {
 	
 	@GetMapping("/adicionarPessoa")
 	public ModelAndView adicionarPessoa() {
-		ModelAndView mav = new ModelAndView("adicionarPessoa");
+		ModelAndView mav = new ModelAndView("/clientes/adicionarPessoa");
 		mav.addObject(new Pessoa());
 		return mav;
 	}
@@ -40,7 +40,7 @@ public class PessoaController {
 	@GetMapping("/listarPessoas")
 	public ModelAndView listarPessoas() {
 		List<Pessoa> lista = pessoaRepo.findAll();
-		ModelAndView mav = new ModelAndView("listarPessoas");
+		ModelAndView mav = new ModelAndView("/clientes/listarPessoas");
 		mav.addObject("pessoas", lista);
 		return mav;
 	}
@@ -50,7 +50,7 @@ public class PessoaController {
 		Pessoa pessoa = pessoaRepo.findById(id)
 			.orElseThrow(() -> new IllegalArgumentException("ID inválido:" + id));
 		
-		ModelAndView modelAndView = new ModelAndView("editarPessoa");
+		ModelAndView modelAndView = new ModelAndView("/clientes/editarPessoa");
 		modelAndView.addObject(pessoa);
 		return modelAndView;
 	}
