@@ -12,47 +12,43 @@
 	<ul>
 <li><a href="/">Início</a></li>
 		<hr>
-		<li><a href="/adicionarPessoa">Adicionar cliente</a></li>
-		<li><a href="/listarClientes">Listar clientes</a></li>
+		<li><a href="/adicionarProduto">Adicionar produto</a></li>
+		<li><a href="/listarProduto">Listar produtos</a></li>
 		<hr>
 		<li><a href="/public/sobre.html">Sobre o site</a></li>
 	</ul>
 
 	<div style="margin-left:25%;padding:1px 16px;height:1000px;">
 
-		<h1>Formulário para edição de clientes:</h1>
-		<form method="POST" th:object="${cliente}" th:action="@{/editar/{id}(id=${cliente.id})}">
+		<h1>Formulário para edição de produtos:</h1>
+		<form method="POST" th:object="${produto}" th:action="@{/produto/editar/{id}(id=${produto.id})}">
 			<p>
-				Nome completo *: 
-				<input type="text" th:field="*{nome}" placeholder="Seu nome completo" required>
+				Nome do produto *: 
+				<input type="text" th:field="*{nome}" placeholder="leite condensado" required>
 			</p>
 			<p>
-				Endereço *:
-				<input type="text" th:field="*{endereco}" placeholder="Logradouro" required>
+				Marca *:
+				<input type="text" th:field="*{marca}" placeholder="nelplê" required>
 			</p>
 			<p>
-				CEP *:
-				<input type="text" th:field="*{cep}" placeholder="00000-000" required>
+				Altura *:
+				<input type="text" th:field="*{altura}" placeholder="11cm" required>
 			</p>
 			<p>
-				Profissão *:
-				<input type="text" th:field="*{profissao}" placeholder="Professor" required>
+				Largura *:
+				<input type="text" th:field="*{largura}" placeholder="11cm" required>
 			</p>
 			<p>
-			
-				e-Mail *: 
-				<input type="text" th:field="*{email}" placeholder="nome@dominio.com" required>
-			<p>
-				Gênero*: 
+				Profundidade *:
+				<input type="text" th:field="*{profundidade}" placeholder="11cm" required>
 			</p>
 			<p>
-				<input type="radio" name="genero" th:field="*{genero}" value="Masculino" required>Masculino
+				Peso *:
+				<input type="text" th:field="*{peso}" placeholder="11g" required>
 			</p>
 			<p>
-				<input type="radio" name="genero" th:field="*{genero}" value="Feminino" required>Feminino
-			</p>
-			<p>
-				<input type="radio" name="genero" th:field="*{genero}" value="Não Informado" required>Não informar
+				Preço *:
+				<input type="text" th:field="*{preco}" placeholder="11.11" required>
 			</p>
 			<button class="button" type="reset">Reiniciar</button>
 			<button class="button" type="submit">Editar!</button>
