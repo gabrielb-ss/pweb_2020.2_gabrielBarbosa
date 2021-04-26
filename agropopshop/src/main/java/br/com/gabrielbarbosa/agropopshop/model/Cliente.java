@@ -1,6 +1,5 @@
 package br.com.gabrielbarbosa.agropopshop.model;
 
-
 import java.io.Serializable;
 
 import javax.persistence.Entity;
@@ -17,7 +16,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @Entity
-@Table(name="pessoas")
+@Table(name="clientes")
 
 public class Cliente implements Serializable {
 
