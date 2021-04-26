@@ -1,10 +1,10 @@
-package br.com.gabrielbarbosa.cadpessoas;
+package br.com.gabrielbarbosa.agropopshop;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ApplicationTests {
+class AgroPopShopGabrielBarbosaApplicationTests {
 
 	@Test
 	void contextLoads() {

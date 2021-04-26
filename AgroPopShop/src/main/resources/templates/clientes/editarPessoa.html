@@ -21,7 +21,7 @@
 	<div style="margin-left:25%;padding:1px 16px;height:1000px;">
 
 		<h1>Formulário para edição de clientes:</h1>
-		<form method="POST" th:object="${pessoa}" th:action="@{/editar/{id}(id=${pessoa.id})}">
+		<form method="POST" th:object="${cliente}" th:action="@{/editar/{id}(id=${cliente.id})}">
 			<p>
 				Nome completo *: 
 				<input type="text" th:field="*{nome}" placeholder="Seu nome completo" required>

@@ -33,21 +33,21 @@
 			<th>Editar</th>
 			<th>Remover</th>
 		</tr>
-		<tr th:each="pessoa: ${pessoas}">
-			<td th:text="${pessoa.id}"></td>
-			<td th:text="${pessoa.nome}"></td>
-			<td th:text="${pessoa.genero}"></td>
-			<td th:text="${pessoa.endereco}"></td>
-			<td th:text="${pessoa.cep}"></td>
-			<td th:text="${pessoa.profissao}"></td>
+		<tr th:each="cliente: ${clientes}">
+			<td th:text="${cliente.id}"></td>
+			<td th:text="${cliente.nome}"></td>
+			<td th:text="${cliente.genero}"></td>
+			<td th:text="${cliente.endereco}"></td>
+			<td th:text="${cliente.cep}"></td>
+			<td th:text="${cliente.profissao}"></td>
 			<td>
-				<a th:href="'mailto:'+${pessoa.email}"th:text="${pessoa.email}"></a>
+				<a th:href="'mailto:'+${cliente.email}"th:text="${cliente.email}"></a>
 			</td>
 			<td>
-				<a th:href="@{/editar/{id}(id=${pessoa.id})}">Editar</a>
+				<a th:href="@{/editar/{id}(id=${cliente.id})}">Editar</a>
 			</td>
 			<td>
-				<a th:href="@{/remover/{id}(id=${pessoa.id})}">Remover</a>
+				<a th:href="@{/remover/{id}(id=${cliente.id})}">Remover</a>
 			</td>
 	  	</tr>
 	</table>

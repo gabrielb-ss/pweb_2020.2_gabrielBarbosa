@@ -5,17 +5,16 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.4.4</version>
+		<version>2.4.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>br.com.gabrielbarbosa.cadpessoas</groupId>
-	<artifactId>cadpessoas</artifactId>
+	<groupId>br.com.gabrielbarbosa.agropopshop</groupId>
+	<artifactId>agropopshop</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Cadastro de pessoas Pweb 2020.2</name>
-	<description>Um CRUD para Cadastro de pessoas Pweb 2020.2</description>
+	<name>Agro pop Shop  - Gabriel Barbosa</name>
+	<description>Projeto da segunda unidade de PWeb 2020.2</description>
 	<properties>
 		<java.version>1.8</java.version>
-		<maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
 	</properties>
 	<dependencies>
 		<dependency>

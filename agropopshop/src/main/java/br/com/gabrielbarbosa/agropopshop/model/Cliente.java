@@ -1,6 +1,8 @@
-package br.com.gabrielbarbosa.cadpessoas.model;
+package br.com.gabrielbarbosa.agropopshop.model;
+
 
 import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,7 +19,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name="pessoas")
 
-public class Pessoa implements Serializable {
+public class Cliente implements Serializable {
 
 	private static final long serialVersionUID = 235594939766088109L;
 
@@ -75,3 +77,4 @@ public class Pessoa implements Serializable {
 		this.profissao = profissao;
 	}
 }
+
