@@ -32,6 +32,7 @@
 		<tr th:each="dependente: ${dependentes}">
 			<td th:text="${dependente.id}"></td>
 			<td th:text="${dependente.nome}"></td>
+			<td th:text="${#temporals.format(dependente.dataNascimento, 'dd/MM/yyyy')}"></td>
 			<td th:text="${dependente.genero}"></td>
 			<td>
 				<a th:href="@{/dependente/editar/{id}(id=${dependente.id})}">Editar</a>

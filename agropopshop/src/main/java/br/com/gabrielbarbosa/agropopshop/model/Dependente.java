@@ -1,13 +1,16 @@
 package br.com.gabrielbarbosa.agropopshop.model;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDate;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -30,8 +33,17 @@ public class Dependente implements Serializable {
 	
 	private String nome;
 	private String genero;
-	private Date nascimento;
 	
+	@Column(nullable=false)
+	@DateTimeFormat(pattern="yyyy-MM-dd") 
+	private LocalDate dataNascimento;
+	
+	public LocalDate getDataNascimento() {
+		return dataNascimento;
+	}
+	public void setDataNascimento(LocalDate dataNascimento) {
+		this.dataNascimento = dataNascimento;
+	}
 	public Long getId() {
 		return id;
 	}
@@ -49,12 +61,6 @@ public class Dependente implements Serializable {
 	}
 	public void setGenero(String genero) {
 		this.genero = genero;
-	}
-	public Date getNascimento() {
-		return nascimento;
-	}
-	public void setNascimento(Date nascimento) {
-		this.nascimento = nascimento;
 	}
 	public int getId_pai() {
 		return id_pai;
