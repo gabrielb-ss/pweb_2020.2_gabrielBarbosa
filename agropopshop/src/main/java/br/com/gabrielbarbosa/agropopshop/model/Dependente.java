@@ -29,7 +29,7 @@ public class Dependente implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
-	private int id_pai;
+	private Long idPai;
 	
 	private String nome;
 	private String genero;
@@ -62,12 +62,12 @@ public class Dependente implements Serializable {
 	public void setGenero(String genero) {
 		this.genero = genero;
 	}
-	public int getId_pai() {
-		return id_pai;
+	public Long getIdPai() {
+		return idPai;
 	}
-	public void setId_pai(int id_pai) {
-		this.id_pai = id_pai;
+	public void setIdPai(Long idPai) {
+		this.idPai = idPai;
 	}
-	
+
 }
 

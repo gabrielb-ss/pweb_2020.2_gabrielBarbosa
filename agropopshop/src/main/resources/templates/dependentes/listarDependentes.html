@@ -23,6 +23,7 @@
 	<h1>Lista de dependentes cadastrados</h1>
 	<table>
 		<tr>
+			<th>ID responsável</th>
 			<th>ID</th>
 			<th>Nome completo</th>
 			<th>Genero</th>
@@ -30,6 +31,7 @@
 			<th>Remover</th>
 		</tr>
 		<tr th:each="dependente: ${dependentes}">
+			<td th:text="${dependente.idPai}"></td>
 			<td th:text="${dependente.id}"></td>
 			<td th:text="${dependente.nome}"></td>
 			<td th:text="${#temporals.format(dependente.dataNascimento, 'dd/MM/yyyy')}"></td>

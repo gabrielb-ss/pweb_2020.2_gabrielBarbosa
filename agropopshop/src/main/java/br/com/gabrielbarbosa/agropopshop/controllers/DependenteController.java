@@ -25,11 +25,14 @@ public class DependenteController {
 		mav.addObject(new Dependente());
 		return mav;
 	}
-
+	
 	@PostMapping("/adicionarDependente")
 	public String adicionarDependente(Dependente p) {
+
+		System.out.println("\nantes ID pai: " + p.getIdPai() + "\nNome: " + p.getNome());
 		this.dependenteRepo.save(p);
-		return "redirect:/listarDependentes";
+		System.out.println("\ndepois ID pai: " + p.getIdPai() + "\nNome: " + p.getNome());
+		return "redirect:/listarClientes";
 	}
 	
 	@GetMapping("/listarDependentes")
@@ -53,7 +56,7 @@ public class DependenteController {
 	@PostMapping("/dependente/editar/{id}")
 	public ModelAndView editarDependente(@PathVariable("id") long id, Dependente dependente) {
 		this.dependenteRepo.save(dependente);
-		return new ModelAndView("redirect:/listarDependentes");
+		return new ModelAndView("redirect:/listarClientes");
 	}
 	
 	@GetMapping("/dependente/remover/{id}")
@@ -61,7 +64,7 @@ public class DependenteController {
 		Dependente aRemover = dependenteRepo.findById(id)	
 			.orElseThrow(() -> new IllegalArgumentException("ID inválido:" + id)); 
 		dependenteRepo.delete(aRemover);
-		return new ModelAndView("redirect:/listarDependentes");
+		return new ModelAndView("redirect:/listarClientes");
 	}
 
 }

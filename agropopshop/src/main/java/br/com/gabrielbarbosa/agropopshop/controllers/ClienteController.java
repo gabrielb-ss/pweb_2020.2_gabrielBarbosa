@@ -1,5 +1,6 @@
 package br.com.gabrielbarbosa.agropopshop.controllers;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,13 +52,21 @@ public class ClienteController {
 	
 	@GetMapping("/editar/{id}")
 	public ModelAndView formeditarCliente(@PathVariable("id") long id) {
-		List<Dependente> lista = dependenteRepo.findAll();
 		Cliente cliente = clienteRepo.findById(id)
 			.orElseThrow(() -> new IllegalArgumentException("ID inválido:" + id));
 		
 		ModelAndView mav = new ModelAndView("/clientes/editarCliente");
+		
+		List<Dependente> lista = dependenteRepo.findAll();
+		List<Dependente> depend = new ArrayList<>();
+		for (int i = 0; i < lista.size(); ++i) {
+			if(lista.get(i).getIdPai() == id) {
+				depend.add(lista.get(i));
+			}
+		}
+		
 		mav.addObject(cliente);
-		mav.addObject("dependentes", lista);
+		mav.addObject("dependentes", depend);
 
 		
 		return mav;
@@ -66,7 +75,7 @@ public class ClienteController {
 	@PostMapping("/editar/{id}")
 	public ModelAndView editarCliente(@PathVariable("id") long id, Cliente cliente) {
 		this.clienteRepo.save(cliente);
-		return new ModelAndView("redirect:/listarClientes");
+		return new ModelAndView("redirect:/editar/{id}") ;
 	}
 	
 	@GetMapping("/remover/{id}")

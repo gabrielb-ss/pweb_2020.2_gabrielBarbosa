@@ -60,8 +60,17 @@
 		<p>* Campo Obrigatório</p>
 		
 		<h1>Lista de dependentes cadastrados</h1>
+	<!--<form method="GET" th:object="${cliente}" th:action="@{/adicionarDependente/{id}(id=${cliente.id})}">
+  		 <button class="button" type="submit">Adicionar</button>
+  		 
+   		 <a th:href="@{/adicionarDependente/(id=${cliente.id})}"> Adicionar dependente</a>
+   		 <a class="button" href="/adicionarDependente?">Adicionar dependente</a>
+	</form>-->
+		 <a class="button" th:href="@{/adicionarDependente/?idP={id}(id=${cliente.id})}"> Adicionar</a>
+		
 	<table>
 		<tr>
+			<th>ID responsável</th>
 			<th>ID</th>
 			<th>Nome completo</th>
 			<th>Genero</th>
@@ -69,6 +78,7 @@
 			<th>Remover</th>
 		</tr>
 		<tr th:each="dependente: ${dependentes}">
+			<td th:text="${dependente.idPai}"></td>
 			<td th:text="${dependente.id}"></td>
 			<td th:text="${dependente.nome}"></td>
 			<td th:text="${#temporals.format(dependente.dataNascimento, 'dd/MM/yyyy')}"></td>
