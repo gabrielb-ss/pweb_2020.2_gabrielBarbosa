@@ -11,13 +11,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import br.com.gabrielbarbosa.agropopshop.model.Cliente;
+import br.com.gabrielbarbosa.agropopshop.model.Dependente;
 import br.com.gabrielbarbosa.agropopshop.repositories.ClienteRepository;
+import br.com.gabrielbarbosa.agropopshop.repositories.DependenteRepository;
 
 @Controller
 @RequestMapping("/")
 public class ClienteController {
 	@Autowired
 	ClienteRepository clienteRepo;
+	@Autowired 
+	DependenteRepository dependenteRepo;
 
 	@GetMapping
 	public String index() {
@@ -47,12 +51,16 @@ public class ClienteController {
 	
 	@GetMapping("/editar/{id}")
 	public ModelAndView formeditarCliente(@PathVariable("id") long id) {
+		List<Dependente> lista = dependenteRepo.findAll();
 		Cliente cliente = clienteRepo.findById(id)
 			.orElseThrow(() -> new IllegalArgumentException("ID inválido:" + id));
 		
-		ModelAndView modelAndView = new ModelAndView("/clientes/editarCliente");
-		modelAndView.addObject(cliente);
-		return modelAndView;
+		ModelAndView mav = new ModelAndView("/clientes/editarCliente");
+		mav.addObject(cliente);
+		mav.addObject("dependentes", lista);
+
+		
+		return mav;
 	}
 
 	@PostMapping("/editar/{id}")

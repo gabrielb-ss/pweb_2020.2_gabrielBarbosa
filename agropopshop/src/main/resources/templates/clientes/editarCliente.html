@@ -58,5 +58,28 @@
 			<button class="button" type="submit">Editar!</button>
 		</form>
 		<p>* Campo Obrigatório</p>
+		
+		<h1>Lista de dependentes cadastrados</h1>
+	<table>
+		<tr>
+			<th>ID</th>
+			<th>Nome completo</th>
+			<th>Genero</th>
+			<th>Editar</th>
+			<th>Remover</th>
+		</tr>
+		<tr th:each="dependente: ${dependentes}">
+			<td th:text="${dependente.id}"></td>
+			<td th:text="${dependente.nome}"></td>
+			<td th:text="${#temporals.format(dependente.dataNascimento, 'dd/MM/yyyy')}"></td>
+			<td th:text="${dependente.genero}"></td>
+			<td>
+				<a th:href="@{/dependente/editar/{id}(id=${dependente.id})}">Editar</a>
+			</td>
+			<td>
+				<a th:href="@{/dependente/remover/{id}(id=${dependente.id})}">Remover</a>
+			</td>
+	  	</tr>
+	</table>
 </body>
 </html>
