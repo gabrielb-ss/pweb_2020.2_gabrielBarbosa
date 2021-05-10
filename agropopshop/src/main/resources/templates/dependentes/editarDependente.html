@@ -22,6 +22,10 @@
 
 		<h1>Formulário para edição de dependentes:</h1>
 		<form method="POST" th:object="${dependente}" th:action="@{/dependente/editar/{id}(id=${dependente.id})}">
+			<p> ID responsável:
+
+			 	<input type="text" th:field="*{idPai}" required>
+			 </p>
 			<p>
 				Nome completo *: 
 				<input type="text" th:field="*{nome}" placeholder="Seu nome completo" required>

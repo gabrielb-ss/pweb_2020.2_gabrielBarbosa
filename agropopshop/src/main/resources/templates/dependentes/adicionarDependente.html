@@ -24,7 +24,7 @@
 		<form method="POST" th:object="${dependente}" th:action="@{/adicionarDependente}">
 			<p> ID responsável:
 
-			 	<input type="text" th:field="*{idPai}">
+			 	<input type="text" th:field="*{idPai}" required>
 			 </p>
 			<p>
 				Nome completo *: 
