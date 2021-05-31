@@ -30,6 +30,7 @@
 			<th>Largura</th>
 			<th>Profundidade</th>
 			<th>Peso</th>
+			<th>Volume</th>
 			<th>Preço</th>
 			<th>Editar</th>
 			<th>Remover</th>
@@ -42,6 +43,7 @@
 			<td th:text="${produto.largura}"></td>
 			<td th:text="${produto.profundidade}"></td>
 			<td th:text="${produto.peso}"></td>
+			<td th:text="${produto.volume}"></td>
 			<td th:text="${produto.preco}"></td>
 			<td>
 				<a th:href="@{/produto/editar/{id}(id=${produto.id})}">Editar</a>

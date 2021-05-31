@@ -28,12 +28,16 @@ public class Produto implements Serializable {
 	
 	private String nome;
 	private String marca;
-	private String altura;
-	private String largura;
-	private String profundidade;
-	private String peso;
-	private String preco;
+	private float altura;
+	private float largura;
+	private float profundidade;
+	private float peso;
+	private float preco;
+	private float volume;
 	
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
 	public Long getId() {
 		return id;
 	}
@@ -44,7 +48,7 @@ public class Produto implements Serializable {
 		return nome;
 	}
 	public void setNome(String nome) {
-		this.nome = nome;
+		this.nome = nome;	
 	}
 	public String getMarca() {
 		return marca;
@@ -52,39 +56,43 @@ public class Produto implements Serializable {
 	public void setMarca(String marca) {
 		this.marca = marca;
 	}
-	public String getAltura() {
+	public float getAltura() {
 		return altura;
 	}
-	public void setAltura(String altura) {
+	public void setAltura(float altura) {
 		this.altura = altura;
 	}
-	public String getLargura() {
+	public float getLargura() {
 		return largura;
 	}
-	public void setLargura(String largura) {
+	public void setLargura(float largura) {
 		this.largura = largura;
 	}
-	public String getProfundidade() {
+	public float getProfundidade() {
 		return profundidade;
 	}
-	public void setProfundidade(String profundidade) {
+	public void setProfundidade(float profundidade) {
 		this.profundidade = profundidade;
 	}
-	public String getPeso() {
+	public float getPeso() {
 		return peso;
 	}
-	public void setPeso(String peso) {
+	public void setPeso(float peso) {
 		this.peso = peso;
 	}
-	public String getPreco() {
+	public float getPreco() {
 		return preco;
 	}
-	public void setPreco(String preco) {
+	public void setPreco(float preco) {
 		this.preco = preco;
 	}
-	public static long getSerialversionuid() {
-		return serialVersionUID;
+	public float getVolume() {
+		return volume;
 	}
-	
+	public void setVolume() {
+		this.volume = getAltura()*getLargura()*getProfundidade();
+		
+	}
+
 	
 }

@@ -21,14 +21,15 @@ public class ProdutoController {
 
 	
 	@GetMapping("/adicionarProduto")
-	public ModelAndView adicionarPessoa() {
+	public ModelAndView adicionarProduto() {
 		ModelAndView mav = new ModelAndView("/produtos/adicionarProduto");
 		mav.addObject(new Produto());
 		return mav;
 	}
 
 	@PostMapping("/adicionarProduto")
-	public String adicionarPessoa(Produto p) {
+	public String adicionarProduto(Produto p) {
+		p.setVolume();
 		this.produtoRepo.save(p);
 		return "redirect:/listarProdutos";
 	}
@@ -53,6 +54,7 @@ public class ProdutoController {
 
 	@PostMapping("/produto/editar/{id}")
 	public ModelAndView editarProduto(@PathVariable("id") long id, Produto produto) {
+		produto.setVolume();
 		this.produtoRepo.save(produto);
 		return new ModelAndView("redirect:/listarProdutos");
 	}
